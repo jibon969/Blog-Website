@@ -22,6 +22,14 @@ a {
     font-weight: 800;
 }
 
+:target::before {
+  content: "";
+  display: block;
+  height: 80px; /* same as navbar height */
+  margin-top: -80px;
+  visibility: hidden;
+}
+
 
 .bgColor{
     background-color: #E9EBEC;
