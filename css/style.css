@@ -37,6 +37,15 @@ a {
     padding: 70px;
     border-color: red;
 }
+
+.gradientText {
+  background: linear-gradient(to right, #6b6b84, #6b6b84, #dd3675, #6b6b84);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* Firefox */
+  color: transparent;
+}
+
 .defaultBtn {
     border: none;
     position: relative;
@@ -45,12 +54,13 @@ a {
     z-index: 1;
     color: #fff;
     border-radius: 5px;
-    padding: 12px 35px 12px 35px;
+    padding: 12px 35px;
     font-weight: 700;
     font-size: 16px;
-    background: linear-gradient(to left, #ff5d22 50%, #221638 50%) right;
-    background-size: 200%;
-    transition: .5s ease-out;
+    background: linear-gradient(to right, #6b6b84, #d8363a, #dd3675, #b44593);
+    background-size: 200% 100%;
+    background-position: left bottom;
+    transition: background-position 0.5s ease-out;
 }
 
 .defaultBtn:hover {
@@ -61,10 +71,13 @@ a {
     z-index: 1;
     color: #fff;
     border-radius: 5px;
-    background-position: left;
-    padding: 12px 35px 12px 35px;
+    padding: 12px 35px;
     font-weight: 700;
     font-size: 16px;
+    background: linear-gradient(to right, #6b6b84, #6b6b84, #dd3675, #6b6b84);
+    background-size: 200% 100%;
+    background-position: left bottom;
+    transition: background-position 0.5s ease-out;
 }
 
 /*======================================================= 
@@ -155,76 +168,30 @@ a {
 }
 
 
-
-.footerArea {
-    background-color: #fefcf8;
+/*======================================================= 
+    Project section 
+======================================================= */
+#projects{
+    background-color: #FEFCF8;
     padding-top: 100px;
-    position: relative;
-    z-index: 1;
+    padding-bottom: 50px;
+    overflow: hidden;
 }
 
-.singleFooterWidget {
-    margin-bottom: 30px;
-}
+.project-img {
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.3s;
+  }
 
-.footerLinksList {
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style-type: none;
-}
+  .project-img:hover {
+    transform: scale(1.05);
+  }
 
-.footerLinksList li {
-    margin-bottom: 12px;
-    color: #6b6b84;
-    font-weight: 600;
-}
-
-.socialMedia ul {
-    list-style-type: none;
-}
-
-.socialMedia ul li {
-    display: inline;
-    margin: 10px;
-}
-
-.socialMedia{
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    color: #fff;
-    background-color: #6b6b84;
-    font-size: 18px;
-    position: relative;
-    border-radius: 2px;
-    padding-top: 2px;
-}
-
-.socialMedia:hover{
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    color: #fff;
-    background-color: #FF5D22;
-    font-size: 18px;
-    position: relative;
-    border-radius: 2px;
-    padding-top: 2px;
-
-}
-
-.socialMedia a:hover{
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    color: #fff;
-    background-color: #FF5D22;
-    font-size: 18px;
-    position: relative;
-    border-radius: 2px;
-    padding-top: 2px;
-
-}
+  .project-card {
+    overflow: hidden;
+    border-radius: 8px;
+  }
 
 /*======================================================= 
     team_member section 
@@ -742,7 +709,6 @@ a {
     padding-bottom: 70px;
     overflow: hidden;
     display: block;
-    /*background-color: #F5F5F5;*/
     background-color: #FFFFFF;
 }
 
@@ -804,36 +770,6 @@ a {
     height: 384px;
 }
 
-
-.defaultBtn {
-    border: none;
-    position: relative;
-    text-align: center;
-    overflow: hidden;
-    z-index: 1;
-    color: #fff;
-    border-radius: 5px;
-    padding: 12px 35px 12px 35px;
-    font-weight: 700;
-    font-size: 16px;
-    background: linear-gradient(to left, #ff5d22 50%, #221638 50%) right;
-    background-size: 200%;
-    transition: .5s ease-out;
-}
-
-.defaultBtn:hover {
-    border: none;
-    position: relative;
-    text-align: center;
-    overflow: hidden;
-    z-index: 1;
-    color: #fff;
-    border-radius: 5px;
-    background-position: left;
-    padding: 12px 35px 12px 35px;
-    font-weight: 700;
-    font-size: 16px;
-}
 
 /*======================================================= 
     team_member section 
@@ -1012,11 +948,10 @@ a {
 ======================================================= */
 
 .contactArea {
-    padding-top: 100px;
-    padding-bottom: 70px;
+    /* padding-top: 100px;
+    padding-bottom: 70px; */
     overflow: hidden;
     display: block;
-
     background-color: #FFFFFF;
 }
 
@@ -1026,6 +961,7 @@ a {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 55px;
+    background-color: var(--primary-color);;
 }
 
 .subtitle {
@@ -1040,7 +976,7 @@ a {
 
 .location {
     background-color: #fff;
-    /* padding: 5px; */
+    padding: 5px;
     box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
     height: 200px;
     border-radius: 7px;
@@ -1077,38 +1013,6 @@ a {
     border-radius: 5px;
     height: 384px;
 }
-
-
-.defaultBtn {
-    border: none;
-    position: relative;
-    text-align: center;
-    overflow: hidden;
-    z-index: 1;
-    color: #fff;
-    border-radius: 5px;
-    padding: 12px 35px 12px 35px;
-    font-weight: 700;
-    font-size: 16px;
-    background: linear-gradient(to left, #ff5d22 50%, #221638 50%) right;
-    background-size: 200%;
-    transition: .5s ease-out;
-}
-
-.defaultBtn:hover {
-    border: none;
-    position: relative;
-    text-align: center;
-    overflow: hidden;
-    z-index: 1;
-    color: #fff;
-    border-radius: 5px;
-    background-position: left;
-    padding: 12px 35px 12px 35px;
-    font-weight: 700;
-    font-size: 16px;
-}
-
 
 
 /*======================================================= 
@@ -1182,9 +1086,7 @@ a {
     position: relative;
     border-radius: 2px;
     padding-top: 2px;
-
 }
-
 
 .footerContactInfo {
     padding-left: 0;
@@ -1243,4 +1145,39 @@ a {
     transform: translateY(-40%);
     z-index: -1;
     opacity: .8;
+}
+
+/*=====================================
+            myServices 
+======================================*/
+.myServices{
+    background-color: #FFFFFF;
+    color: #000;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    overflow: hidden;
+}
+
+.custom-shadow {
+    box-shadow: 0 10px 40px -10px rgba(0, 64, 128, 0.09);
+    /* background: #fff; */
+    background-color: #000;
+    color: #FFFFFF;
+    border-radius: 15px !important;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.services-title{
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 55px;
+}
+
+.custom-shadow:hover{
+    transform: translateY(-5px);
+    background-color: #FFFFFF;
+    color: #000;
 }
